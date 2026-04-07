@@ -1,16 +1,14 @@
 aid: appsumo
-url: 
-  https://raw.githubusercontent.com/api-evangelist/appsumo/refs/heads/main/apis.yml
+url: https://raw.githubusercontent.com/api-evangelist/appsumo/refs/heads/main/apis.yml
 apis:
   - aid: appsumo:appsumo-licensing-api
     name: AppSumo Licensing API
     tags:
-      - Software Deals
+      - Licensing
       - Marketplace
       - SaaS
-      - Licensing
-    image: 
-      https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+      - Software Deals
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://appsumo.com
     humanURL: https://docs.licensing.appsumo.com/
     properties:
@@ -22,8 +20,7 @@ apis:
         type: Licensing
       - url: https://docs.licensing.appsumo.com/api/api__profile.html
         type: PartnerProfile
-      - url: 
-          https://docs.licensing.appsumo.com/webhook/webhook__getting_started.html
+      - url: https://docs.licensing.appsumo.com/webhook/webhook__getting_started.html
         type: Webhooks
       - url: https://docs.licensing.appsumo.com/webhook/webhook__connect.html
         type: WebhookConnect
@@ -42,12 +39,11 @@ apis:
       to partner applications.
 name: AppSumo
 tags:
-  - Software Deals
   - Marketplace
   - SaaS
+  - Software Deals
 type: Index
-image: 
-  https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 common:
   - url: https://appsumo.com/
@@ -71,12 +67,10 @@ common:
   - url: https://docs.licensing.appsumo.com/faq/faq__oauth.html
     name: OAuth
     type: OAuth
-  - url: 
-      https://docs.licensing.appsumo.com/webhook/webhook__getting_started.html
+  - url: https://docs.licensing.appsumo.com/webhook/webhook__getting_started.html
     name: Webhooks
     type: Webhooks
-  - url: 
-      https://appsumooriginals.helpscoutdocs.com/article/889-api-access-for-developers
+  - url: https://appsumooriginals.helpscoutdocs.com/article/889-api-access-for-developers
     name: API Access for Developers
     type: GettingStarted
   - url: https://appsumo.com/help/
