@@ -1,0 +1,17 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "appsumo": "https://appsumo.com/vocab#",
+    "licenseKey": "appsumo:licenseKey",
+    "productSlug": "appsumo:productSlug",
+    "status": "appsumo:status",
+    "tier": "appsumo:tier",
+    "activatedAt": "schema:dateCreated",
+    "userId": "schema:identifier",
+    "email": "schema:email",
+    "partnerId": "schema:identifier",
+    "productName": "schema:name",
+    "webhookUrl": "appsumo:webhookUrl"
+  }
+}

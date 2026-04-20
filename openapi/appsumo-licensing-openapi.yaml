@@ -1,0 +1,208 @@
+openapi: 3.0.3
+info:
+  title: AppSumo Licensing API
+  description: >-
+    The AppSumo Licensing API enables software partners selling on the AppSumo
+    marketplace to programmatically manage licenses for their customers. Partners
+    can retrieve license details, validate activations, and manage license states
+    via REST endpoints authenticated with an API key.
+  version: 2.0.0
+  contact:
+    name: AppSumo Partner Support
+    url: https://docs.licensing.appsumo.com
+  license:
+    name: Proprietary
+servers:
+  - url: https://appsumo.com/api/v2
+    description: AppSumo Licensing API v2
+security:
+  - apiKeyAuth: []
+tags:
+  - name: Licenses
+    description: License management for AppSumo marketplace purchases
+  - name: Profile
+    description: Partner profile management
+paths:
+  /licenses/{licenseKey}:
+    get:
+      operationId: getLicense
+      summary: AppSumo - Get License
+      description: Returns details for a specific license key purchased through AppSumo
+      tags:
+        - Licenses
+      parameters:
+        - name: licenseKey
+          in: path
+          required: true
+          description: The license key to retrieve information for
+          schema:
+            type: string
+      responses:
+        '200':
+          description: License details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/License'
+              examples:
+                GetLicenseExample:
+                  x-microcks-default: true
+                  summary: Example license detail response
+                  value:
+                    licenseKey: APPSUMO-XXXXXXXX-XXXXXXXX-XXXXXXXX
+                    productSlug: my-saas-tool
+                    status: active
+                    tier: Tier 2
+                    activatedAt: "2026-03-01T10:00:00Z"
+                    userId: user-12345
+                    email: customer@example.com
+        '404':
+          description: License not found
+        '401':
+          description: Unauthorized - invalid or missing API key
+  /licenses/{licenseKey}/activate:
+    post:
+      operationId: activateLicense
+      summary: AppSumo - Activate License
+      description: Activates a license key for a customer within the partner application
+      tags:
+        - Licenses
+      parameters:
+        - name: licenseKey
+          in: path
+          required: true
+          description: The license key to activate
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                  description: Partner application user ID to bind the license to
+            examples:
+              ActivateLicenseExample:
+                x-microcks-default: true
+                summary: Example license activation request
+                value:
+                  userId: partner-user-001
+      responses:
+        '200':
+          description: License activated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/License'
+        '400':
+          description: Invalid request or license already activated
+        '404':
+          description: License not found
+        '401':
+          description: Unauthorized - invalid or missing API key
+  /licenses/{licenseKey}/deactivate:
+    post:
+      operationId: deactivateLicense
+      summary: AppSumo - Deactivate License
+      description: Deactivates an active license key within the partner application
+      tags:
+        - Licenses
+      parameters:
+        - name: licenseKey
+          in: path
+          required: true
+          description: The license key to deactivate
+          schema:
+            type: string
+      responses:
+        '200':
+          description: License deactivated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/License'
+        '404':
+          description: License not found
+        '401':
+          description: Unauthorized - invalid or missing API key
+  /profile:
+    get:
+      operationId: getPartnerProfile
+      summary: AppSumo - Get Partner Profile
+      description: Returns the partner profile information for the authenticated API key
+      tags:
+        - Profile
+      responses:
+        '200':
+          description: Partner profile
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PartnerProfile'
+              examples:
+                GetProfileExample:
+                  x-microcks-default: true
+                  summary: Example partner profile response
+                  value:
+                    partnerId: partner-001
+                    productSlug: my-saas-tool
+                    productName: My SaaS Tool
+                    webhookUrl: https://myapp.com/webhooks/appsumo
+        '401':
+          description: Unauthorized - invalid or missing API key
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-AppSumo-API-Key
+  schemas:
+    License:
+      title: License
+      description: An AppSumo software license
+      type: object
+      properties:
+        licenseKey:
+          type: string
+          description: Unique license key for activation
+        productSlug:
+          type: string
+          description: AppSumo product slug identifier
+        status:
+          type: string
+          enum: [active, inactive, refunded]
+          description: Current license status
+        tier:
+          type: string
+          description: License tier level
+        activatedAt:
+          type: string
+          format: date-time
+          description: License activation timestamp
+        userId:
+          type: string
+          description: AppSumo user who purchased the license
+        email:
+          type: string
+          format: email
+          description: Purchaser email address
+    PartnerProfile:
+      title: PartnerProfile
+      description: AppSumo marketplace partner profile
+      type: object
+      properties:
+        partnerId:
+          type: string
+          description: Unique partner identifier
+        productSlug:
+          type: string
+          description: Partner product slug on AppSumo
+        productName:
+          type: string
+          description: Partner product display name
+        webhookUrl:
+          type: string
+          description: Webhook URL for license event notifications

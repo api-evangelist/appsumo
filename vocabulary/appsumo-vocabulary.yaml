@@ -1,0 +1,98 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: AppSumo
+  description: >-
+    Vocabulary for the AppSumo marketplace licensing platform, covering license
+    lifecycle management, partner integration, and customer onboarding for SaaS
+    products sold through the AppSumo marketplace.
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - name: AppSumo Licensing API
+      namespace: appsumo
+      version: "2.0.0"
+      baseUrl: "https://appsumo.com/api/v2"
+      status: active
+
+  resources:
+    - name: licenses
+      description: Software licenses purchased through the AppSumo marketplace
+      api: AppSumo Licensing API
+      actions:
+        - get
+        - activate
+        - deactivate
+    - name: profile
+      description: Partner profile for AppSumo marketplace integration
+      api: AppSumo Licensing API
+      actions:
+        - get
+
+  actions:
+    - name: get
+      httpMethod: GET
+      pattern: read
+    - name: activate
+      httpMethod: POST
+      pattern: write
+    - name: deactivate
+      httpMethod: POST
+      pattern: write
+
+  schemas:
+    core:
+      - name: License
+        description: An AppSumo marketplace license with key, status, and tier
+      - name: PartnerProfile
+        description: Partner profile with product slug and webhook configuration
+
+  parameters:
+    identifiers:
+      - name: licenseKey
+        description: Unique AppSumo license key
+      - name: partnerId
+        description: Unique AppSumo partner identifier
+
+  enums:
+    licenseStatuses:
+      - active
+      - inactive
+      - refunded
+    licenseTiers:
+      - Tier 1
+      - Tier 2
+      - Tier 3
+      - Tier 4
+      - Tier 5
+
+  authentication:
+    schemes:
+      - type: apikey
+        description: API key authentication via X-AppSumo-API-Key header
+
+capability:
+  workflows:
+    - name: License Management
+      description: Validate and activate AppSumo licenses for newly onboarded customers
+      resources:
+        - licenses
+  personas:
+    - name: SaaS Partner
+      description: Developer integrating AppSumo licensing into their product
+    - name: Customer
+      description: AppSumo customer activating a purchased license
+  domains:
+    - name: License Lifecycle
+      description: Managing license activation and status for AppSumo purchases
+      resources:
+        - licenses
+    - name: Partner Integration
+      description: Configuring and managing the AppSumo marketplace partnership
+      resources:
+        - profile
+
+  namespaces: []
+  binds: []

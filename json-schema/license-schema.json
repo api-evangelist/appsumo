@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/appsumo/main/json-schema/license-schema.json",
+  "title": "License",
+  "description": "An AppSumo software license purchased through the marketplace",
+  "type": "object",
+  "properties": {
+    "licenseKey": {
+      "type": "string",
+      "description": "Unique license key for activation"
+    },
+    "productSlug": {
+      "type": "string",
+      "description": "AppSumo product slug identifier"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "inactive",
+        "refunded"
+      ],
+      "description": "Current license status"
+    },
+    "tier": {
+      "type": "string",
+      "description": "License tier (Tier 1, 2, 3, etc.)"
+    },
+    "activatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the license was activated"
+    },
+    "userId": {
+      "type": "string",
+      "description": "AppSumo user who purchased the license"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Purchaser email address"
+    }
+  },
+  "required": [
+    "licenseKey",
+    "productSlug",
+    "status"
+  ]
+}

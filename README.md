@@ -1,69 +1,53 @@
 # AppSumo (appsumo)
 
-AppSumo (https://appsumo.com/) is a digital marketplace for software deals and lifetime deals for entrepreneurs. It connects independent software vendors and SaaS companies with a large community of small business owners, freelancers, and entrepreneurs seeking discounted or lifetime-access software products. AppSumo is known for curating tools across categories such as productivity, marketing, design, development, and business operations, and has grown into one of the most popular platforms for launching and discovering new SaaS products.
+AppSumo is a digital marketplace for software deals and lifetime access offers for entrepreneurs. It connects independent software vendors and SaaS companies with a large community of small business owners, freelancers, and entrepreneurs. AppSumo is known for curating productivity, marketing, design, development, and business tools, and the AppSumo Licensing API enables SaaS partners to manage licenses for customers who purchase through the marketplace.
 
-**URL:** [https://raw.githubusercontent.com/api-evangelist/appsumo/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/appsumo/refs/heads/main/apis.yml)
+**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/appsumo/refs/heads/main/apis.yml)
 
-## Scope
+## Scope of Coverage
 
-- **Type:** Index
-- **Position:** Consuming
-- **Access:** 3rd-Party
+| Item | Count |
+|------|-------|
+| APIs | 1 |
+| OpenAPI Specs | 1 |
+| JSON Schemas | 1 |
+| JSON Structures | 1 |
+| Examples | 1 |
+| JSON-LD Contexts | 1 |
+| Spectral Rulesets | 1 |
+| Naftiko Capabilities | 2 |
+| Vocabularies | 1 |
 
-## Tags:
+## APIs Covered
 
- - Software Deals, Marketplace, SaaS
+- **AppSumo Licensing API** — REST API for managing marketplace licenses, including license validation, activation, and partner profile management.
 
-## Timestamps
+## Artifacts
 
-- **Created:** 2026-03-24
-- **Modified:** 2026-03-24
+### OpenAPI Specifications
+- [openapi/appsumo-licensing-openapi.yaml](openapi/appsumo-licensing-openapi.yaml)
 
-## APIs
+### JSON Schemas
+- [json-schema/license-schema.json](json-schema/license-schema.json)
 
-### AppSumo Licensing API
+### JSON Structures
+- [json-structure/license-structure.json](json-structure/license-structure.json)
 
-The AppSumo Licensing API (v2) enables software partners selling products on the AppSumo marketplace to programmatically manage licenses for their customers. Partners can retrieve license details, validate activations, and manage license states via REST API endpoints authenticated with an API key. The API also supports OAuth integration, allowing customers to connect their AppSumo purchases directly to partner applications. Webhooks are available to notify partner systems in real time when purchases, activations, or deactivations occur. The API is rate limited to 20 requests per minute and is accessible through the AppSumo Partner Portal.
+### Examples
+- [examples/license-example.json](examples/license-example.json)
 
-**Human URL:** [https://docs.licensing.appsumo.com/](https://docs.licensing.appsumo.com/)
+### JSON-LD
+- [json-ld/appsumo-context.jsonld](json-ld/appsumo-context.jsonld)
 
-#### Tags:
+### Spectral Rules
+- [rules/appsumo-spectral-rules.yml](rules/appsumo-spectral-rules.yml)
 
- - Software Deals, Marketplace, SaaS, Licensing
+### Naftiko Capabilities
+- [capabilities/shared/appsumo-api.yaml](capabilities/shared/appsumo-api.yaml)
+- [capabilities/license-management.yaml](capabilities/license-management.yaml)
 
-#### Properties
-
-- [Documentation](https://docs.licensing.appsumo.com/)
-- [GettingStarted](https://docs.licensing.appsumo.com/api/api__getting_started.html)
-- [Licensing](https://docs.licensing.appsumo.com/api/api__license.html)
-- [PartnerProfile](https://docs.licensing.appsumo.com/api/api__profile.html)
-- [Webhooks](https://docs.licensing.appsumo.com/webhook/webhook__getting_started.html)
-- [WebhookConnect](https://docs.licensing.appsumo.com/webhook/webhook__connect.html)
-- [OAuth](https://docs.licensing.appsumo.com/faq/faq__oauth.html)
-- [WebhooksFAQ](https://docs.licensing.appsumo.com/faq/faq__webhooks.html)
-- [FAQ](https://docs.licensing.appsumo.com/faq/faq__other.html)
-
-## Common Properties
-
-- [Website](https://appsumo.com/)
-- [Documentation](https://docs.licensing.appsumo.com/)
-- [SignUp](https://appsumo.com/sign-up/)
-- [Login](https://appsumo.com/login/)
-- [Pricing](https://appsumo.com/pricing/)
-- [GettingStarted](https://docs.licensing.appsumo.com/api/api__getting_started.html)
-- [OAuth](https://docs.licensing.appsumo.com/faq/faq__oauth.html)
-- [Webhooks](https://docs.licensing.appsumo.com/webhook/webhook__getting_started.html)
-- [GettingStarted](https://appsumooriginals.helpscoutdocs.com/article/889-api-access-for-developers)
-- [Support](https://appsumo.com/help/)
-- [TermsOfService](https://appsumo.com/terms-of-service/)
-- [PrivacyPolicy](https://appsumo.com/privacy-policy/)
-- [Blog](https://blog.appsumo.com/)
-- [PartnerProgram](https://appsumo.com/partners/)
-- [Affiliate](https://appsumo.com/affiliate/)
-- [X](https://twitter.com/appsumo)
-- [LinkedIn](https://www.linkedin.com/company/appsumo)
-- [Facebook](https://www.facebook.com/AppSumo)
-- [YouTube](https://www.youtube.com/appsumo)
+### Vocabulary
+- [vocabulary/appsumo-vocabulary.yaml](vocabulary/appsumo-vocabulary.yaml)
 
 ## Maintainers
 

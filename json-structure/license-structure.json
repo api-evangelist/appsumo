@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/appsumo/main/json-structure/license-structure.json",
+  "title": "License",
+  "description": "An AppSumo software license purchased through the marketplace",
+  "type": "record",
+  "fields": [
+    {
+      "name": "licenseKey",
+      "type": "string",
+      "description": "Unique license key"
+    },
+    {
+      "name": "productSlug",
+      "type": "string",
+      "description": "Product slug identifier"
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "description": "License status"
+    },
+    {
+      "name": "tier",
+      "type": "string",
+      "description": "License tier"
+    },
+    {
+      "name": "activatedAt",
+      "type": "string",
+      "description": "Activation timestamp"
+    },
+    {
+      "name": "userId",
+      "type": "string",
+      "description": "Purchaser user identifier"
+    },
+    {
+      "name": "email",
+      "type": "string",
+      "description": "Purchaser email address"
+    }
+  ]
+}
