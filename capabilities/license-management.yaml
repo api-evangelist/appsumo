@@ -1,67 +1,114 @@
-naftiko: "1.0.0-alpha1"
-
+naftiko: 1.0.0-alpha2
 info:
   label: AppSumo License Management
-  description: >-
-    Workflow capability for managing AppSumo marketplace licenses within a SaaS partner
-    application. Enables validating purchases, activating licenses, and managing customer
-    access for products sold through the AppSumo marketplace.
+  description: Workflow capability for managing AppSumo marketplace licenses within a SaaS partner application. Enables validating
+    purchases, activating licenses, and managing customer access for products sold through the AppSumo marketplace.
   tags:
-    - AppSumo
-    - Licensing
-    - Marketplace
-    - SaaS Partners
-  created: "2026-04-19"
-  modified: "2026-04-19"
-
+  - AppSumo
+  - Licensing
+  - Marketplace
+  - SaaS Partners
+  created: '2026-04-19'
+  modified: '2026-05-06'
 binds:
-  - namespace: env
-    keys:
-      APPSUMO_API_KEY: APPSUMO_API_KEY
-
+- namespace: env
+  keys:
+    APPSUMO_API_KEY: APPSUMO_API_KEY
 capability:
   consumes:
-    - import: appsumo
-      location: ./shared/appsumo-api.yaml
-
+  - type: http
+    namespace: appsumo
+    baseUri: https://appsumo.com/api/v2
+    description: AppSumo Licensing API
+    authentication:
+      type: apikey
+      header: X-AppSumo-API-Key
+      key: '{{APPSUMO_API_KEY}}'
+    resources:
+    - name: licenses
+      path: /licenses/{licenseKey}
+      description: License management
+      operations:
+      - name: get-license
+        method: GET
+        description: Returns license details for a key
+        inputParameters:
+        - name: licenseKey
+          in: path
+          type: string
+          required: true
+          description: License key
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: activate-license
+        method: POST
+        description: Activates a license key
+        inputParameters:
+        - name: licenseKey
+          in: path
+          type: string
+          required: true
+          description: License key to activate
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data:
+            userId: '{{tools.userId}}'
+    - name: profile
+      path: /profile
+      description: Partner profile
+      operations:
+      - name: get-profile
+        method: GET
+        description: Returns partner profile information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
   exposes:
-    - type: mcp
-      port: 9090
-      namespace: license-management-mcp
-      transport: http
-      description: MCP server for AI-assisted AppSumo license management in SaaS products.
-      tools:
-        - name: validate-license
-          description: Validates and retrieves details for an AppSumo license key
-          hints:
-            readOnly: true
-            idempotent: true
-          call: "appsumo.get-license"
-          with:
-            licenseKey: "tools.licenseKey"
-          outputParameters:
-            - type: object
-              mapping: "$."
-
-        - name: activate-customer-license
-          description: Activates an AppSumo license for a newly onboarded customer
-          hints:
-            readOnly: false
-            destructive: false
-          call: "appsumo.activate-license"
-          with:
-            licenseKey: "tools.licenseKey"
-            userId: "tools.userId"
-          outputParameters:
-            - type: object
-              mapping: "$."
-
-        - name: check-partner-profile
-          description: Checks the AppSumo partner profile and integration configuration
-          hints:
-            readOnly: true
-            idempotent: true
-          call: "appsumo.get-profile"
-          outputParameters:
-            - type: object
-              mapping: "$."
+  - type: mcp
+    port: 9090
+    namespace: license-management-mcp
+    transport: http
+    description: MCP server for AI-assisted AppSumo license management in SaaS products.
+    tools:
+    - name: validate-license
+      description: Validates and retrieves details for an AppSumo license key
+      hints:
+        readOnly: true
+        idempotent: true
+      call: appsumo.get-license
+      with:
+        licenseKey: tools.licenseKey
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: activate-customer-license
+      description: Activates an AppSumo license for a newly onboarded customer
+      hints:
+        readOnly: false
+        destructive: false
+      call: appsumo.activate-license
+      with:
+        licenseKey: tools.licenseKey
+        userId: tools.userId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: check-partner-profile
+      description: Checks the AppSumo partner profile and integration configuration
+      hints:
+        readOnly: true
+        idempotent: true
+      call: appsumo.get-profile
+      outputParameters:
+      - type: object
+        mapping: $.
