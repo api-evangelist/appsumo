@@ -26,19 +26,16 @@ apis:
     type: JSONLD
   - url: rules/appsumo-spectral-rules.yml
     type: SpectralRules
-  - url: capabilities/shared/appsumo-api.yaml
-    type: NaftikoCapability
-  - url: capabilities/license-management.yaml
-    type: NaftikoCapability
   - url: vocabulary/appsumo-vocabulary.yaml
     type: Vocabulary
-  description: >-
-    The AppSumo Licensing API (v2) enables software partners selling products on
-    the AppSumo marketplace to programmatically manage licenses for their customers.
-    Partners can retrieve license details, validate activations, and manage license
-    states via REST API endpoints authenticated with an API key. The API also supports
-    OAuth integration, allowing customers to connect their AppSumo purchases directly
-    to partner applications.
+  - type: NaftikoCapability
+    url: capabilities/licensing-licenses.yaml
+  - type: NaftikoCapability
+    url: capabilities/licensing-profile.yaml
+  description: The AppSumo Licensing API (v2) enables software partners selling products on the AppSumo marketplace to programmatically
+    manage licenses for their customers. Partners can retrieve license details, validate activations, and manage license states
+    via REST API endpoints authenticated with an API key. The API also supports OAuth integration, allowing customers to connect
+    their AppSumo purchases directly to partner applications.
 name: AppSumo
 tags:
 - Marketplace
@@ -106,7 +103,6 @@ common:
   name: AppSumo on YouTube
   type: YouTube
 created: '2026-03-24'
-modified: '2026-04-19'
+modified: '2026-05-19'
 specificationVersion: '0.19'
-description: >-
-  AppSumo Licensing API Documentation - v2.
+description: AppSumo Licensing API Documentation - v2.
