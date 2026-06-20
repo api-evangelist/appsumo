@@ -8,7 +8,7 @@ apis:
     - Marketplace
     - SaaS
     - Software Deals
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://appsumo.com
     humanURL: https://docs.licensing.appsumo.com/
     properties:
@@ -42,7 +42,7 @@ tags:
   - SaaS
   - Software Deals
 type: Index
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 common:
   - type: GitHubOrganization
