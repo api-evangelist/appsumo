@@ -21,16 +21,16 @@ apis:
     - url: json-structure/license-structure.json
       type: JSONStructure
     - url: examples/license-example.json
-      type: Example
+      type: Examples
     - url: json-ld/appsumo-context.jsonld
       type: JSONLD
     - url: rules/appsumo-spectral-rules.yml
       type: SpectralRules
     - url: vocabulary/appsumo-vocabulary.yaml
       type: Vocabulary
-    - type: NaftikoCapability
+    - type: X-NaftikoCapability
       url: capabilities/licensing-licenses.yaml
-    - type: NaftikoCapability
+    - type: X-NaftikoCapability
       url: capabilities/licensing-profile.yaml
     description: The AppSumo Licensing API (v2) enables software partners selling products on the AppSumo marketplace to programmatically
       manage licenses for their customers. Partners can retrieve license details, validate activations, and manage license states
@@ -55,7 +55,7 @@ common:
     type: Documentation
   - url: https://appsumo.com/sign-up/
     name: Sign Up
-    type: SignUp
+    type: Signup
   - url: https://appsumo.com/login/
     name: Login
     type: Login
