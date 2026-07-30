@@ -1,50 +1,86 @@
 aid: appsumo
 url: https://raw.githubusercontent.com/api-evangelist/appsumo/refs/heads/main/apis.yml
 apis:
-  - aid: appsumo:appsumo-licensing-api
-    name: AppSumo Licensing API
-    tags:
-    - Licensing
-    - Marketplace
-    - SaaS
-    - Software Deals
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://appsumo.com
-    humanURL: https://docs.licensing.appsumo.com/
-    properties:
-    - url: https://docs.licensing.appsumo.com/
-      type: Documentation
-    - url: openapi/appsumo-licensing-openapi.yaml
-      type: OpenAPI
-    - url: json-schema/license-schema.json
-      type: JSONSchema
-    - url: json-structure/license-structure.json
-      type: JSONStructure
-    - url: examples/license-example.json
-      type: Examples
-    - url: json-ld/appsumo-context.jsonld
-      type: JSONLD
-    - url: rules/appsumo-spectral-rules.yml
-      type: SpectralRules
-    - url: vocabulary/appsumo-vocabulary.yaml
-      type: Vocabulary
-    - type: X-NaftikoCapability
-      url: capabilities/licensing-licenses.yaml
-    - type: X-NaftikoCapability
-      url: capabilities/licensing-profile.yaml
-    description: The AppSumo Licensing API (v2) enables software partners selling products on the AppSumo marketplace to programmatically
-      manage licenses for their customers. Partners can retrieve license details, validate activations, and manage license states
-      via REST API endpoints authenticated with an API key. The API also supports OAuth integration, allowing customers to connect
-      their AppSumo purchases directly to partner applications.
+- aid: appsumo:appsumo-licenses-api
+  name: AppSumo Licenses API
+  description: License management for AppSumo marketplace purchases
+  humanURL: https://docs.licensing.appsumo.com/
+  baseURL: https://appsumo.com
+  tags:
+  - Licenses
+  properties:
+  - type: OpenAPI
+    url: openapi/appsumo-licenses-api-openapi.yml
+  - type: Documentation
+    url: https://docs.licensing.appsumo.com/
+  - type: JSONSchema
+    url: json-schema/license-schema.json
+  - type: JSONStructure
+    url: json-structure/license-structure.json
+  - type: Examples
+    url: examples/license-example.json
+  - type: JSONLD
+    url: json-ld/appsumo-context.jsonld
+  - type: SpectralRules
+    url: rules/appsumo-spectral-rules.yml
+  - type: Vocabulary
+    url: vocabulary/appsumo-vocabulary.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/licensing-licenses.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/licensing-profile.yaml
+- aid: appsumo:appsumo-profile-api
+  name: AppSumo Profile API
+  description: Partner profile management
+  humanURL: https://docs.licensing.appsumo.com/
+  baseURL: https://appsumo.com
+  tags:
+  - Profile
+  properties:
+  - type: OpenAPI
+    url: openapi/appsumo-profile-api-openapi.yml
+  - type: Documentation
+    url: https://docs.licensing.appsumo.com/
+  - type: JSONSchema
+    url: json-schema/license-schema.json
+  - type: JSONStructure
+    url: json-structure/license-structure.json
+  - type: Examples
+    url: examples/license-example.json
+  - type: JSONLD
+    url: json-ld/appsumo-context.jsonld
+  - type: SpectralRules
+    url: rules/appsumo-spectral-rules.yml
+  - type: Vocabulary
+    url: vocabulary/appsumo-vocabulary.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/licensing-licenses.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/licensing-profile.yaml
 name: AppSumo
 tags:
   - Marketplace
   - SaaS
   - Software Deals
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/appsumo.png
 access: 3rd-Party
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/appsumo/overview
   - type: AgenticAccess
     url: agentic-access/appsumo-agentic-access.yml
   - type: DomainSecurity
