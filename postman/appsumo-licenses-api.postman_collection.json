@@ -1,0 +1,692 @@
+{
+  "info": {
+    "_postman_id": "e5f456fd-6fae-4e48-90ea-55989c39ac5d",
+    "name": "AppSumo Licensing Licenses API",
+    "description": "The AppSumo Licensing API enables software partners selling on the AppSumo marketplace to programmatically manage licenses for their customers. Partners can retrieve license details, validate activations, and manage license states via REST endpoints authenticated with an API key.\n\nContact Support:\n Name: AppSumo Partner Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:03:40.000Z",
+    "updatedAt": "2026-07-28T01:03:40.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-e5f456fd-6fae-4e48-90ea-55989c39ac5d"
+  },
+  "item": [
+    {
+      "name": "licenses",
+      "item": [
+        {
+          "name": "{licenseKey}",
+          "item": [
+            {
+              "name": "activate",
+              "item": [
+                {
+                  "name": "AppSumo - Activate License",
+                  "id": "81865a32-220e-459d-ad0c-36732e19b58d",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"userId\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/licenses/:licenseKey/activate",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "licenses",
+                        ":licenseKey",
+                        "activate"
+                      ],
+                      "variable": [
+                        {
+                          "id": "77c252d3-2e3e-47d8-ab18-863efd1b71c7",
+                          "key": "licenseKey",
+                          "value": "<string>",
+                          "description": "(Required) The license key to activate"
+                        }
+                      ]
+                    },
+                    "description": "Activates a license key for a customer within the partner application"
+                  },
+                  "response": [
+                    {
+                      "id": "96c09a73-a71b-4091-b24a-2cf35cbb2623",
+                      "name": "License activated successfully",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "X-AppSumo-API-Key",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"userId\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/licenses/:licenseKey/activate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "licenses",
+                            ":licenseKey",
+                            "activate"
+                          ],
+                          "variable": [
+                            {
+                              "key": "licenseKey"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"licenseKey\": \"<string>\",\n  \"productSlug\": \"<string>\",\n  \"status\": \"refunded\",\n  \"tier\": \"<string>\",\n  \"activatedAt\": \"<dateTime>\",\n  \"userId\": \"<string>\",\n  \"email\": \"<email>\"\n}",
+                      "createdAt": "2026-07-28T01:03:40.000Z",
+                      "updatedAt": "2026-07-28T01:03:40.000Z",
+                      "uid": "35240-96c09a73-a71b-4091-b24a-2cf35cbb2623"
+                    },
+                    {
+                      "id": "cd60798f-d1f7-47e0-90c2-ce142bb85962",
+                      "name": "Invalid request or license already activated",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "X-AppSumo-API-Key",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"userId\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/licenses/:licenseKey/activate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "licenses",
+                            ":licenseKey",
+                            "activate"
+                          ],
+                          "variable": [
+                            {
+                              "key": "licenseKey"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:03:40.000Z",
+                      "updatedAt": "2026-07-28T01:03:40.000Z",
+                      "uid": "35240-cd60798f-d1f7-47e0-90c2-ce142bb85962"
+                    },
+                    {
+                      "id": "f19c1704-bfc5-490c-9571-57b658eb3373",
+                      "name": "Unauthorized - invalid or missing API key",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "X-AppSumo-API-Key",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"userId\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/licenses/:licenseKey/activate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "licenses",
+                            ":licenseKey",
+                            "activate"
+                          ],
+                          "variable": [
+                            {
+                              "key": "licenseKey"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:03:40.000Z",
+                      "updatedAt": "2026-07-28T01:03:40.000Z",
+                      "uid": "35240-f19c1704-bfc5-490c-9571-57b658eb3373"
+                    },
+                    {
+                      "id": "bade5430-d0c9-49e5-b7a4-0d0b2ddfec9d",
+                      "name": "License not found",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "X-AppSumo-API-Key",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"userId\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/licenses/:licenseKey/activate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "licenses",
+                            ":licenseKey",
+                            "activate"
+                          ],
+                          "variable": [
+                            {
+                              "key": "licenseKey"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:03:40.000Z",
+                      "updatedAt": "2026-07-28T01:03:40.000Z",
+                      "uid": "35240-bade5430-d0c9-49e5-b7a4-0d0b2ddfec9d"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:03:40.000Z",
+                  "updatedAt": "2026-07-28T01:03:40.000Z",
+                  "uid": "35240-81865a32-220e-459d-ad0c-36732e19b58d"
+                }
+              ],
+              "id": "0faef351-bf10-4b6a-9e5d-7a0fc5097fdf",
+              "createdAt": "2026-07-28T01:03:40.000Z",
+              "updatedAt": "2026-07-28T01:03:40.000Z",
+              "uid": "35240-0faef351-bf10-4b6a-9e5d-7a0fc5097fdf"
+            },
+            {
+              "name": "deactivate",
+              "item": [
+                {
+                  "name": "AppSumo - Deactivate License",
+                  "id": "ec98fb90-d92e-4dba-9fe1-b8b5ae3a13b8",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/licenses/:licenseKey/deactivate",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "licenses",
+                        ":licenseKey",
+                        "deactivate"
+                      ],
+                      "variable": [
+                        {
+                          "id": "2cf48404-9377-4767-9e3e-3fb554c905e5",
+                          "key": "licenseKey",
+                          "value": "<string>",
+                          "description": "(Required) The license key to deactivate"
+                        }
+                      ]
+                    },
+                    "description": "Deactivates an active license key within the partner application"
+                  },
+                  "response": [
+                    {
+                      "id": "a50b2a3b-cd62-454d-bc41-2d3cfbc05711",
+                      "name": "License deactivated successfully",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "X-AppSumo-API-Key",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/licenses/:licenseKey/deactivate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "licenses",
+                            ":licenseKey",
+                            "deactivate"
+                          ],
+                          "variable": [
+                            {
+                              "key": "licenseKey"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"licenseKey\": \"<string>\",\n  \"productSlug\": \"<string>\",\n  \"status\": \"refunded\",\n  \"tier\": \"<string>\",\n  \"activatedAt\": \"<dateTime>\",\n  \"userId\": \"<string>\",\n  \"email\": \"<email>\"\n}",
+                      "createdAt": "2026-07-28T01:03:40.000Z",
+                      "updatedAt": "2026-07-28T01:03:40.000Z",
+                      "uid": "35240-a50b2a3b-cd62-454d-bc41-2d3cfbc05711"
+                    },
+                    {
+                      "id": "5209b351-7aa8-458e-b0ff-2a2a467bccb7",
+                      "name": "Unauthorized - invalid or missing API key",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "X-AppSumo-API-Key",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/licenses/:licenseKey/deactivate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "licenses",
+                            ":licenseKey",
+                            "deactivate"
+                          ],
+                          "variable": [
+                            {
+                              "key": "licenseKey"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:03:40.000Z",
+                      "updatedAt": "2026-07-28T01:03:40.000Z",
+                      "uid": "35240-5209b351-7aa8-458e-b0ff-2a2a467bccb7"
+                    },
+                    {
+                      "id": "ad998b5f-83e4-4ba0-91e8-ff3c69e04c9f",
+                      "name": "License not found",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "X-AppSumo-API-Key",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/licenses/:licenseKey/deactivate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "licenses",
+                            ":licenseKey",
+                            "deactivate"
+                          ],
+                          "variable": [
+                            {
+                              "key": "licenseKey"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:03:40.000Z",
+                      "updatedAt": "2026-07-28T01:03:40.000Z",
+                      "uid": "35240-ad998b5f-83e4-4ba0-91e8-ff3c69e04c9f"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:03:40.000Z",
+                  "updatedAt": "2026-07-28T01:03:40.000Z",
+                  "uid": "35240-ec98fb90-d92e-4dba-9fe1-b8b5ae3a13b8"
+                }
+              ],
+              "id": "2694d6b2-21c5-4077-b764-ea78ee048d92",
+              "createdAt": "2026-07-28T01:03:40.000Z",
+              "updatedAt": "2026-07-28T01:03:40.000Z",
+              "uid": "35240-2694d6b2-21c5-4077-b764-ea78ee048d92"
+            },
+            {
+              "name": "AppSumo - Get License",
+              "id": "4a5c622f-5751-41c4-bf2d-164e8c6cdfe7",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/licenses/:licenseKey",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "licenses",
+                    ":licenseKey"
+                  ],
+                  "variable": [
+                    {
+                      "id": "df2919a9-274d-4560-8acc-905fd733a4f1",
+                      "key": "licenseKey",
+                      "value": "<string>",
+                      "description": "(Required) The license key to retrieve information for"
+                    }
+                  ]
+                },
+                "description": "Returns details for a specific license key purchased through AppSumo"
+              },
+              "response": [
+                {
+                  "id": "2bba5a3c-dd0c-4657-810b-4066fc3af74a",
+                  "name": "License details",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "X-AppSumo-API-Key",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/licenses/:licenseKey",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "licenses",
+                        ":licenseKey"
+                      ],
+                      "variable": [
+                        {
+                          "key": "licenseKey"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"licenseKey\": \"<string>\",\n  \"productSlug\": \"<string>\",\n  \"status\": \"refunded\",\n  \"tier\": \"<string>\",\n  \"activatedAt\": \"<dateTime>\",\n  \"userId\": \"<string>\",\n  \"email\": \"<email>\"\n}",
+                  "createdAt": "2026-07-28T01:03:40.000Z",
+                  "updatedAt": "2026-07-28T01:03:40.000Z",
+                  "uid": "35240-2bba5a3c-dd0c-4657-810b-4066fc3af74a"
+                },
+                {
+                  "id": "5f547358-e76a-489f-9273-3635f1351fb6",
+                  "name": "Unauthorized - invalid or missing API key",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "X-AppSumo-API-Key",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/licenses/:licenseKey",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "licenses",
+                        ":licenseKey"
+                      ],
+                      "variable": [
+                        {
+                          "key": "licenseKey"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:03:40.000Z",
+                  "updatedAt": "2026-07-28T01:03:40.000Z",
+                  "uid": "35240-5f547358-e76a-489f-9273-3635f1351fb6"
+                },
+                {
+                  "id": "97334910-7e77-4d12-8f5c-8e7fb0d86ade",
+                  "name": "License not found",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "X-AppSumo-API-Key",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/licenses/:licenseKey",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "licenses",
+                        ":licenseKey"
+                      ],
+                      "variable": [
+                        {
+                          "key": "licenseKey"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:03:40.000Z",
+                  "updatedAt": "2026-07-28T01:03:40.000Z",
+                  "uid": "35240-97334910-7e77-4d12-8f5c-8e7fb0d86ade"
+                }
+              ],
+              "createdAt": "2026-07-28T01:03:40.000Z",
+              "updatedAt": "2026-07-28T01:03:40.000Z",
+              "uid": "35240-4a5c622f-5751-41c4-bf2d-164e8c6cdfe7"
+            }
+          ],
+          "id": "1179b6a6-b0cf-4166-9da0-288295009c9f",
+          "createdAt": "2026-07-28T01:03:40.000Z",
+          "updatedAt": "2026-07-28T01:03:40.000Z",
+          "uid": "35240-1179b6a6-b0cf-4166-9da0-288295009c9f"
+        }
+      ],
+      "id": "cd4fa0f4-ad97-4d72-b0b9-f3f3322c049d",
+      "createdAt": "2026-07-28T01:03:40.000Z",
+      "updatedAt": "2026-07-28T01:03:40.000Z",
+      "uid": "35240-cd4fa0f4-ad97-4d72-b0b9-f3f3322c049d"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-AppSumo-API-Key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://appsumo.com/api/v2"
+    }
+  ]
+}

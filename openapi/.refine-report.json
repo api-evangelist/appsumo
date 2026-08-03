@@ -1,0 +1,16 @@
+{
+  "provider": "appsumo",
+  "sources": [
+    "appsumo-licenses-api-openapi.yml",
+    "appsumo-profile-api-openapi.yml"
+  ],
+  "outputs": [
+    "appsumo-licenses-api-openapi.yml",
+    "appsumo-profile-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
