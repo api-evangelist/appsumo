@@ -25,10 +25,6 @@ apis:
     url: rules/appsumo-spectral-rules.yml
   - type: Vocabulary
     url: vocabulary/appsumo-vocabulary.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/licensing-licenses.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/licensing-profile.yaml
 - aid: appsumo:appsumo-profile-api
   name: AppSumo Profile API
   description: Partner profile management
@@ -53,10 +49,6 @@ apis:
     url: rules/appsumo-spectral-rules.yml
   - type: Vocabulary
     url: vocabulary/appsumo-vocabulary.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/licensing-licenses.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/licensing-profile.yaml
 name: AppSumo
 tags:
   - Marketplace
