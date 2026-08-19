@@ -1,0 +1,166 @@
+{
+  "item": [
+    {
+      "id": "1703dac8-ad95-4fcf-b9fe-6a64ddfb79b7",
+      "name": "Profile",
+      "description": {
+        "content": "Partner profile management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8b070916-88d3-4cc8-b5f7-3952de6cb77e",
+          "name": "AppSumo - Get Partner Profile",
+          "request": {
+            "name": "AppSumo - Get Partner Profile",
+            "description": {
+              "content": "Returns the partner profile information for the authenticated API key",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "profile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fa6b293e-dae6-4f43-baf9-ad00e29baabc",
+              "name": "Partner profile",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-AppSumo-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"partnerId\": \"partner-001\",\n  \"productSlug\": \"my-saas-tool\",\n  \"productName\": \"My SaaS Tool\",\n  \"webhookUrl\": \"https://myapp.com/webhooks/appsumo\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d9008bcc-3d72-4021-af87-2a0aee68a42c",
+              "name": "Unauthorized - invalid or missing API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-AppSumo-API-Key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://appsumo.com/api/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-AppSumo-API-Key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4d34296c-11b4-478d-86dd-5dfaebf21387",
+    "name": "AppSumo Licensing Licenses Profile API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The AppSumo Licensing API enables software partners selling on the AppSumo marketplace to programmatically manage licenses for their customers. Partners can retrieve license details, validate activations, and manage license states via REST endpoints authenticated with an API key.\n\nContact Support:\n Name: AppSumo Partner Support",
+      "type": "text/plain"
+    }
+  }
+}

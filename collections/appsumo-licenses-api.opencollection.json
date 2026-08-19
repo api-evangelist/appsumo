@@ -1,0 +1,87 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AppSumo Licensing Licenses API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-AppSumo-API-Key",
+      "value": "{{X-AppSumo-API-Key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Licenses",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "AppSumo - Get License",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://appsumo.com/api/v2/licenses/:licenseKey",
+            "params": [
+              {
+                "name": "licenseKey",
+                "value": "",
+                "type": "path",
+                "description": "The license key to retrieve information for"
+              }
+            ]
+          },
+          "docs": "Returns details for a specific license key purchased through AppSumo"
+        },
+        {
+          "info": {
+            "name": "AppSumo - Activate License",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://appsumo.com/api/v2/licenses/:licenseKey/activate",
+            "params": [
+              {
+                "name": "licenseKey",
+                "value": "",
+                "type": "path",
+                "description": "The license key to activate"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Activates a license key for a customer within the partner application"
+        },
+        {
+          "info": {
+            "name": "AppSumo - Deactivate License",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://appsumo.com/api/v2/licenses/:licenseKey/deactivate",
+            "params": [
+              {
+                "name": "licenseKey",
+                "value": "",
+                "type": "path",
+                "description": "The license key to deactivate"
+              }
+            ]
+          },
+          "docs": "Deactivates an active license key within the partner application"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
