@@ -52,6 +52,10 @@ apis:
 name: AppSumo
 tags:
   - Marketplace
+  - Software-as-a-Service
+  - Software Deals
+tags_raw:
+  - Marketplace
   - SaaS
   - Software Deals
 type: Index
