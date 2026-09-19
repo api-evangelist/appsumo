@@ -31,6 +31,8 @@ apis:
   humanURL: https://docs.licensing.appsumo.com/
   baseURL: https://appsumo.com
   tags:
+  - Profiles
+  tags_raw:
   - Profile
   properties:
   - type: OpenAPI
