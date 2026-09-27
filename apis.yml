@@ -5,7 +5,6 @@ apis:
   name: AppSumo Licenses API
   description: License management for AppSumo marketplace purchases
   humanURL: https://docs.licensing.appsumo.com/
-  baseURL: https://appsumo.com
   tags:
   - Licenses
   properties:
@@ -29,7 +28,6 @@ apis:
   name: AppSumo Profile API
   description: Partner profile management
   humanURL: https://docs.licensing.appsumo.com/
-  baseURL: https://appsumo.com
   tags:
   - Profiles
   tags_raw:
