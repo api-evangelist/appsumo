@@ -1,0 +1,27 @@
+slug: appsumo
+provider: AppSumo
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Licenses
+  spec_file: appsumo-licenses-api-openapi.yml
+  capability_id: BC-4240.70
+  capability_id_l1: BC-4240
+  capability_name: Entitlement Enforcement
+  confidence: 0.7
+  evidence: POST /licenses/{licenseKey}/activate  Activate License; POST /licenses/{licenseKey}/deactivate;
+    'retrieve license details, validate activations, and manage license states'
+  reason: The operations resolve and change the entitlement state of a software licence purchased on a
+    marketplace — runtime activation/deactivation of a customer's right to use the product. That maps
+    to entitlement enforcement within subscription lifecycle management; some ambiguity remains with provisioning
+    (BC-4240.30).
