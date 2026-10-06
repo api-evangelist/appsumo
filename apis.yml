@@ -88,6 +88,8 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/appsumo.png
 access: 3rd-Party
 common:
+  - url: https://appsumo.com:443/blog
+    type: Blog
   - type: CapabilityMap
     url: capabilities/appsumo-capability-edges.yml
     name: AppSumo Business Capability Map
@@ -159,6 +161,6 @@ common:
     name: AppSumo on YouTube
     type: YouTube
 created: '2026-03-24'
-modified: '2026-05-19'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 description: AppSumo Licensing API Documentation - v2.
