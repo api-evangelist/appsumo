@@ -88,6 +88,12 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/appsumo.png
 access: 3rd-Party
 common:
+  - type: Plans
+    url: plans/appsumo-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/appsumo-rate-limits.yml
+  - type: FinOps
+    url: finops/appsumo-finops.yml
   - url: https://appsumo.com:443/blog
     type: Blog
   - type: CapabilityMap
