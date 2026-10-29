@@ -1,4 +1,4 @@
-# AppSumo (appsumo)
+# AppSumo
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,57 +64,171 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-AppSumo is a digital marketplace for software deals and lifetime access offers for entrepreneurs. It connects independent software vendors and SaaS companies with a large community of small business owners, freelancers, and entrepreneurs. AppSumo is known for curating productivity, marketing, design, development, and business tools, and the AppSumo Licensing API enables SaaS partners to manage licenses for customers who purchase through the marketplace.
+AppSumo Licensing API Documentation - v2.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/appsumo/refs/heads/main/apis.yml)
+**Areas:** Marketplace · Software-as-a-Service · Software Deals
 
-## Scope of Coverage
+## AppSumo on APIs.io
 
-| Item | Count |
-|------|-------|
-| APIs | 1 |
-| OpenAPI Specs | 1 |
-| JSON Schemas | 1 |
-| JSON Structures | 1 |
-| Examples | 1 |
-| JSON-LD Contexts | 1 |
-| Spectral Rulesets | 1 |
-| Naftiko Capabilities | 2 |
-| Vocabularies | 1 |
+Everything profiled for AppSumo is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/appsumo/](https://apis.io/providers/appsumo/)** — or go straight to one of the APIs or properties below.
 
-## APIs Covered
+### APIs (2)
 
-- **AppSumo Licensing API** — REST API for managing marketplace licenses, including license validation, activation, and partner profile management.
+- [AppSumo Licenses API](https://apis.io/apis/appsumo/appsumo-licenses-api/) — License management for AppSumo marketplace purchases
+- [AppSumo Profile API](https://apis.io/apis/appsumo/appsumo-profile-api/) — Partner profile management
 
-## Artifacts
+### Published properties
 
-### OpenAPI Specifications
-- [openapi/appsumo-licensing-openapi.yaml](openapi/appsumo-licensing-openapi.yaml)
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### JSON Schemas
-- [json-schema/license-schema.json](json-schema/license-schema.json)
+#### MCP servers (1)
 
-### JSON Structures
-- [json-structure/license-structure.json](json-structure/license-structure.json)
+Model Context Protocol servers that expose the API to agents.
 
-### Examples
-- [examples/license-example.json](examples/license-example.json)
+- [appsumo](https://apis.io/servers/appsumo/appsumo/)
 
-### JSON-LD
-- [json-ld/appsumo-context.jsonld](json-ld/appsumo-context.jsonld)
+#### Agentic access (1)
 
-### Spectral Rules
-- [rules/appsumo-spectral-rules.yml](rules/appsumo-spectral-rules.yml)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-### Naftiko Capabilities
-- [capabilities/shared/appsumo-api.yaml](capabilities/shared/appsumo-api.yaml)
-- [capabilities/license-management.yaml](capabilities/license-management.yaml)
+- [Appsumo Agentic Access](https://apis.io/agentic-access/appsumo/appsumo-agentic-access/)
 
-### Vocabulary
-- [vocabulary/appsumo-vocabulary.yaml](vocabulary/appsumo-vocabulary.yaml)
+#### JSON Schema (1)
 
-## Maintainers
+The data models the API reads and writes.
 
-**FN:** API Evangelist
+- [License](https://apis.io/schemas/appsumo/license/)
 
-**Email:** info@apievangelist.com
+#### JSON Structure (1)
+
+Data models expressed in JSON Structure.
+
+- [License Structure](https://apis.io/json-structure/appsumo/license-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Appsumo Context](https://apis.io/jsonld/appsumo/appsumo-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Appsumo Vocabulary](https://apis.io/vocabularies/appsumo/appsumo-vocabulary/)
+
+#### Examples (1)
+
+Example requests and responses.
+
+- [License Example](https://apis.io/examples/appsumo/license-example/)
+
+#### Collections (4)
+
+Postman and Open Collection request collections.
+
+- [AppSumo Licensing Licenses API](https://apis.io/collections/appsumo/open-appsumo-licenses-api/)
+- [AppSumo Licensing Licenses Profile API](https://apis.io/collections/appsumo/open-appsumo-profile-api/)
+- [AppSumo Licensing Licenses API](https://apis.io/collections/appsumo/postman-appsumo-licenses-api/)
+- [AppSumo Licensing Licenses Profile API](https://apis.io/collections/appsumo/postman-appsumo-profile-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [AppSumo — jsonschema rules](https://apis.io/rules/appsumo/appsumo-jsonschema-spectral-rules/)
+- [AppSumo API Rules](https://apis.io/rules/appsumo/appsumo-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Appsumo Authentication](https://apis.io/security/appsumo/appsumo-authentication/)
+- [Appsumo Domain Security](https://apis.io/security/appsumo/appsumo-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Appsumo Plans Pricing](https://apis.io/plans/appsumo/appsumo-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Appsumo Rate Limits](https://apis.io/rate-limits/appsumo/appsumo-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Appsumo Finops](https://apis.io/finops/appsumo/appsumo-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://appsumo.com/)
+- [Documentation](https://docs.licensing.appsumo.com/)
+- [Getting started](https://docs.licensing.appsumo.com/api/api__getting_started.html)
+- [Pricing](https://appsumo.com/pricing/)
+- [Support](https://appsumo.com/help/)
+- [Blog](https://appsumo.com:443/blog)
+- [Terms of service](https://appsumo.com/terms-of-service/)
+- [Privacy policy](https://appsumo.com/privacy-policy/)
+- [GitHub](https://github.com/appsumo)
+
+## API Evangelist rating
+
+**Kin Score 44.9** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 38.3 |
+| Contract quality | 63.2 |
+| Contract governance | 27.3 |
+| Operational transparency | 18.4 |
+| Developer ergonomics | 41.7 |
+| Access clarity | 52.6 |
+
+**Agent readiness 52.7** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | unknown |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 24.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/appsumo/](https://apis.io/providers/appsumo/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for AppSumo: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/appsumo/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
