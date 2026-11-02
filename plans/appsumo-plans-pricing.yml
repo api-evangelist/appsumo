@@ -1,0 +1,159 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-28'
+method: searched
+source: https://appsumo.com/
+sources:
+- https://appsumo.com/
+- https://appsumo.com/pricing/
+provenance:
+  tool: engine/economics/harvest_pricing.py
+  run: 20261028T161713
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: flat-platform
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-28'
+published: true
+note: AppSumo homepage listing third-party software lifetime deals, not AppSumo's own API pricing. Prices
+  are one-time 'lifetime' purchases per product with crossed-out comparison values; also mentions '10%
+  off your first purchase' and a 60-day money back promise.
+plan_count: 9
+currency: USD
+plans:
+- name: NotiQ
+  price_text: $59 / lifetime
+  price: 59
+  currency: USD
+  period: one-time
+  unit: lifetime deal
+- name: LeadOcean
+  price_text: $49 / lifetime
+  price: 49
+  currency: USD
+  period: one-time
+  unit: lifetime deal
+  included_quota: Unlimited GTM data API for 693M people and 63M companies
+- name: Webclaw
+  price_text: $59 / lifetime
+  price: 59
+  currency: USD
+  period: one-time
+  unit: lifetime deal
+- name: Subscribr
+  price_text: $79 / lifetime
+  price: 79
+  currency: USD
+  period: one-time
+  unit: lifetime deal
+- name: WorkLLM
+  price_text: $79 / lifetime
+  price: 79
+  currency: USD
+  period: one-time
+  unit: lifetime deal
+  included_quota: 200+ models, org-wide memory, team collaboration
+- name: Utobo Email
+  price_text: $49 / lifetime
+  price: 49
+  currency: USD
+  period: one-time
+  unit: lifetime deal
+- name: AdaptlyPost
+  price_text: $59 / lifetime
+  price: 59
+  currency: USD
+  period: one-time
+  unit: lifetime deal
+- name: StoryChief
+  price_text: $69 / lifetime
+  price: 69
+  currency: USD
+  period: one-time
+  unit: lifetime deal
+- name: WarmySender
+  price_text: $59 / lifetime
+  price: 59
+  currency: USD
+  period: one-time
+  unit: lifetime deal
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - subscription
+  units: []
+  plans:
+  - name: NotiQ
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: LeadOcean
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: Webclaw
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: Subscribr
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: WorkLLM
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: Utobo Email
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: AdaptlyPost
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: StoryChief
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: WarmySender
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
